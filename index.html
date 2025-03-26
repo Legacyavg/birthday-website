@@ -12,8 +12,8 @@
             margin: 0;
             height: 100vh;
             overflow: hidden;
-            font-family: 'Poppins', sans-serif; /* Changed font to Poppins */
-            font-weight: 700; /* Bold weight */
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
             background: linear-gradient(135deg, #FFE6EE 0%, #FFD1DC 100%);
             transition: background 1s ease;
             display: flex;
@@ -95,8 +95,8 @@
         .btn {
             padding: 15px 35px;
             font-size: 22px;
-            font-family: 'Poppins', sans-serif; /* Changed font to Poppins */
-            font-weight: 700; /* Bold weight */
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
             border: none;
             border-radius: 50px;
             cursor: pointer;
@@ -131,7 +131,7 @@
         }
 
         #lets-start {
-            background: linear-gradient(45deg, #FF00FF, #FFD700); /* Changed to a vibrant magenta-to-gold gradient */
+            background: linear-gradient(45deg, #FF00FF, #FFD700);
             position: absolute;
             top: 50%;
             left: 50%;
@@ -207,7 +207,7 @@
                 opacity: 0;
             }
             10% {
-                opacity: 0.8; /* Increased peak opacity from 0.5 to 0.8 */
+                opacity: 0.8;
             }
             100% {
                 transform: translateY(-20vh);
@@ -222,7 +222,7 @@
             color: #87CEFA;
             z-index: 1;
             opacity: 0;
-            animation: float 3s ease-in-out infinite; /* Increased duration to 3s */
+            animation: float 3s ease-in-out infinite;
         }
 
         /* HAPPY BIRTHDAY text styling */
@@ -300,11 +300,11 @@
 
         /* Final message styling inside the scrollable container */
         #message-text {
-            font-size: 24px; /* Increased font size for better readability */
+            font-size: 24px;
             color: white;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
             text-align: center;
-            line-height: 1.8; /* Adjusted line height for better spacing */
+            line-height: 1.8;
         }
 
         /* Style the scrollbar to match the aesthetic */
@@ -383,6 +383,14 @@
     <script>
         // Wait for the DOM to be fully loaded
         document.addEventListener("DOMContentLoaded", () => {
+            // Password protection
+            const correctPassword = "pookie2025";
+            const userPassword = prompt("Enter the password to access your birthday surprise! 🎂");
+            if (userPassword !== correctPassword) {
+                alert("Oops! That’s not the right password. Please try again or ask me for the password! 😊");
+                window.location.reload();
+            }
+
             // Ensure GSAP is loaded
             if (typeof gsap === "undefined") {
                 console.error("GSAP failed to load. Please check your internet connection or the GSAP CDN URL.");
@@ -464,7 +472,7 @@
 
             // Balloons animation
             function addBalloons() {
-                for (let i = 0; i < 10; i++) { // Increased from 5 to 10 balloons
+                for (let i = 0; i < 10; i++) {
                     let balloon = document.createElement("div");
                     balloon.classList.add("balloon");
                     balloon.innerHTML = "🎈";
